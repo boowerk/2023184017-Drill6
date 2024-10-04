@@ -1,6 +1,7 @@
 from pico2d import *
 
-open_canvas()
+TUK_WIDTH, TUK_HEIGHT = 1280, 1024
+open_canvas(TUK_WIDTH, TUK_HEIGHT)
 
 character = load_image('animation_sheet.png')
 background = load_image('TUK_GROUND.png')
@@ -20,11 +21,12 @@ def handle_events():
     pass
 
 running = True
+x, y = TUK_WIDTH // 2, TUK_HEIGHT // 2
 
 while running:
 
     clear_canvas()
-    background.clip_draw(0, 0, 1200, 1800, 400, 300, 800, 600)
+    background.draw(TUK_WIDTH // 2, TUK_HEIGHT // 2)
 
     update_canvas()
     handle_events()
